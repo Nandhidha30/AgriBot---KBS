@@ -1,0 +1,27 @@
+D:\KBS_Agriculture/
+├── backend/
+│   ├── app.py                  # main Flask app
+│   ├── requirements.txt        # Python packages
+│   ├── venv/                   # Python virtual environment
+│   ├── inference_engine/
+│   │   ├── engine.py           # inference engine logic
+│   │   └── kb_rules.json       # knowledge base JSON
+│   └── routes/
+│       └── api_routes.py       # API routes (optional)
+├── frontend/
+│   ├── node_modules/
+│   ├── public/
+│   └── src/
+│       ├── App.js
+│       ├── App.css
+│       ├── index.js
+│       └── components/
+│           ├── SymptomForm.js
+│           ├── ImageUpload.js
+│           ├── ChatPanel.js
+│           └── ResultsDisplay.js
+├── database/
+│   └── mongodb_config.py       # MongoDB config (optional)
+├── utils/
+│   └── helpers.py              # helper functions (optional)
+└── README.md

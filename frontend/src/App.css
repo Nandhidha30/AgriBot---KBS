@@ -1,0 +1,123 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background-color: #f0f8ff;
+  background-image: url("D:\KBS_Agriculture\frontend\src\agriculture.webp"); /* FIX: Use %PUBLIC_URL% */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Arial', sans-serif;
+}
+
+.App-header {
+  background-color: rgba(0, 100, 0, 0.9);
+  padding: 20px;
+  color: white;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.App-header h1 {
+  font-size: 2.8em;
+  margin: 0;
+  font-family: 'Georgia', serif;
+}
+
+.App-header p {
+  margin: 5px 0 0;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.main-content-container {
+  padding: 25px;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.98);
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  min-height: 500px;
+}
+
+.step-indicator {
+  padding: 5px 15px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.symptom-form-container {
+  padding: 20px 0;
+}
+
+.symptom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 12px;
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.checkbox-item:hover {
+  background-color: #e8f5e9;
+}
+
+.checkbox-item input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.1);
+}
+
+.farmer-notes-box {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.chat-window {
+  height: 350px;
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+  overflow-y: scroll;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: #fafafa;
+  text-align: left;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+}
+
+.chat-message {
+  padding: 8px 12px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.chat-message.system {
+  background-color: #e3f2fd; 
+  color: #1565c0;
+  margin-right: auto;
+}
+
+.chat-message.user {
+  background-color: #c8e6c9; 
+  color: #2e7d32;
+  margin-left: auto;
+}

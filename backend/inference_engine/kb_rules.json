@@ -1,0 +1,123 @@
+{
+  "rules": [
+    {
+      "id": "R1_Nutrient",
+      "conditions": ["leaves_yellow_lower", "new_growth_stunted"],
+      "conclusion": "nitrogen_deficiency",
+      "cf": 0.8
+    },
+    {
+      "id": "R2_Nutrient_Iron",
+      "conditions": ["leaves_yellow_upper", "veins_green"],
+      "conclusion": "iron_deficiency",
+      "cf": 0.9
+    },
+    {
+      "id": "R3_Fungal_Early",
+      "conditions": ["leaves_brown_lower", "spots_concentric_rings"],
+      "conclusion": "early_blight",
+      "cf": 0.9
+    },
+    {
+      "id": "R4_Fungal_Powder",
+      "conditions": ["leaves_curling", "spots_powdery_white"],
+      "conclusion": "powdery_mildew",
+      "cf": 0.95
+    },
+    {
+      "id": "R5_Vascular",
+      "conditions": ["stems_cracked", "vascular_discoloration"],
+      "conclusion": "fusarium_wilt_intermediate",
+      "cf": 0.95
+    },
+    {
+      "id": "R6_Water_Stress",
+      "conditions": ["leaves_wilting_day", "soil_dry"],
+      "conclusion": "drought_stress",
+      "cf": 0.85
+    },
+    {
+      "id": "R7_Pest_Spider",
+      "conditions": ["leaves_stippled", "webbing_under_leaves"],
+      "conclusion": "spider_mite_intermediate",
+      "cf": 0.88
+    },
+    {
+      "id": "R8_Final_N",
+      "conditions": ["nitrogen_deficiency", "drought_stress"],
+      "conclusion": "Diagnosis: Nitrogen & Water Stress",
+      "cf": 0.75,
+      "recommendation": {
+        "treatment": "Apply liquid high-nitrogen fertilizer (e.g., 20-5-5) and provide deep, consistent watering.",
+        "recovery": "Test soil for organic content. Restore watering schedule. New growth should appear dark green within a week.",
+        "prevention": "Use slow-release fertilizer at planting. Apply mulch to retain soil moisture."
+      }
+    },
+    {
+      "id": "R9_Final_EB",
+      "conditions": ["early_blight"],
+      "conclusion": "Diagnosis: Early Blight (Alternaria Solani)",
+      "cf": 0.92,
+      "recommendation": {
+        "treatment": "Apply a fungicide containing Chlorothalonil or Mancozeb. Reapply every 7-10 days.",
+        "recovery": "Remove and dispose of infected leaves and debris immediately to slow spread.",
+        "prevention": "Ensure good air circulation. Water at the base of the plant, not the leaves."
+      }
+    },
+    {
+      "id": "R10_Final_FW",
+      "conditions": ["fusarium_wilt_intermediate"],
+      "conclusion": "Diagnosis: Fusarium Wilt",
+      "cf": 0.98,
+      "recommendation": {
+        "treatment": "No effective chemical treatment for soil-borne Fusarium. Remove and destroy the infected plant and surrounding soil.",
+        "recovery": "Sanitize tools. Do not plant susceptible crops in this area for 4-6 years.",
+        "prevention": "Use certified **Fusarium Resistant** ('F') varieties."
+      }
+    },
+    {
+      "id": "R11_Final_SM",
+      "conditions": ["spider_mite_intermediate"],
+      "conclusion": "Diagnosis: Spider Mite Infestation",
+      "cf": 0.89,
+      "recommendation": {
+        "treatment": "Apply Neem oil or an insecticidal soap, targeting the underside of leaves.",
+        "recovery": "Spray heavily with water to dislodge mites. Repeat applications every 5-7 days.",
+        "prevention": "Maintain adequate humidity. Check plants frequently, especially in hot, dry weather."
+      }
+    },
+    {
+      "id": "R12_Final_PM",
+      "conditions": ["powdery_mildew"],
+      "conclusion": "Diagnosis: Powdery Mildew (Erysiphe Cichoracearum)",
+      "cf": 0.95,
+      "recommendation": {
+        "treatment": "Spray wettable sulfur or potassium bicarbonate solution. Ensure coverage on leaf undersides.",
+        "recovery": "Prune overcrowded foliage to increase airflow.",
+        "prevention": "Avoid overhead watering. Plant resistant varieties."
+      }
+    }
+  ],
+  "questions": {
+    "leaves_yellow_lower": "Are older, lower leaves turning yellow?",
+    "leaves_yellow_upper": "Is new growth at the top turning yellow, but veins remain green?",
+    "leaves_brown_lower": "Are lower leaves turning brown, often with concentric rings?",
+    "leaves_curling": "Are leaves curling or rolling upwards at the edges?",
+    "stem_weak": "Does the plant stem appear weak or excessively thin?",
+    "spots_powdery_white": "Are there powdery white or gray spots on leaves or stems?",
+    "new_growth_stunted": "Is the new growth at the top of the plant small or pale?",
+    "stems_cracked": "Are there deep cracks or lesions near the base of the stem?",
+    "vascular_discoloration": "If the stem is cut, is the internal tissue (vascular ring) brown or discolored?",
+    "leaves_wilting_day": "Do leaves wilt during the hottest part of the day?",
+    "soil_dry": "Is the soil consistently dry, several inches deep?",
+    "leaves_stippled": "Are the leaves marked with tiny white or yellow pinprick spots (stippling)?",
+    "webbing_under_leaves": "Is fine, silky webbing visible on the underside of leaves or between leaf junctures?",
+    "spots_concentric_rings": "Do the spots have dark centers surrounded by lighter rings (like a target)?",
+    "veins_green": "Do the veins remain bright green while the surrounding tissue is yellow (chlorosis)?"
+  },
+  "initial_symptoms": [
+    "leaves_yellow_lower", "leaves_yellow_upper", "leaves_brown_lower", "leaves_curling", "stem_weak", "spots_powdery_white", 
+    "new_growth_stunted", "stems_cracked", "vascular_discoloration", "leaves_wilting_day", "soil_dry", 
+    "leaves_stippled", "webbing_under_leaves", "spots_concentric_rings", "veins_green"
+  ]
+}
